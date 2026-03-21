@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+@layer base {
+    :root {
+        --color-brand: 255 122 24;
+        --color-accent: 0 173 181;
+        --color-bg: 2 27 28;
+        --color-text-primary: 255 255 255;
+        --color-text-secondary: 217 217 217;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply antialiased text-white bg-[#021B1C];
+    }
+
+    :focus-visible {
+        @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-[#021B1C];
+    }
+
+    ::selection {
+        @apply bg-brand-500 text-white;
+    }
+}
+
+/* ── Components ────────────────────────────────────────────────────────── */
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold
+               rounded-lg transition-all duration-150 focus:outline-none focus-visible:ring-2
+               focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-primary {
+        @apply btn bg-brand-500 text-white hover:bg-brand-600 focus-visible:ring-brand-500
+               shadow-lg hover:shadow-glow;
+    }
+
+    .btn-secondary {
+        @apply btn bg-accent-500 text-white hover:bg-accent-600 focus-visible:ring-accent-500
+               shadow-lg hover:shadow-glow-accent;
+    }
+
+    .btn-danger {
+        @apply btn bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-500;
+    }
+
+    .btn-ghost {
+        @apply btn text-text-secondary hover:text-text-primary hover:bg-[#0a2e2f];
+    }
+
+    .card {
+        @apply bg-[#0a2e2f] rounded-xl shadow-lg border border-[#1a4445] overflow-hidden;
+    }
+
+    .input {
+        @apply block w-full rounded-lg border border-[#1a4445] bg-[#0a2e2f] px-3 py-2 text-sm
+               placeholder-text-muted shadow-sm transition focus:border-brand-500 focus:outline-none
+               focus:ring-1 focus:ring-brand-500 text-text-primary;
+    }
+
+    .label {
+        @apply block text-sm font-medium text-text-primary mb-1;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+    }
+
+    .badge-blue   { @apply badge bg-accent-500/20 text-accent-300; }
+    .badge-green  { @apply badge bg-green-500/20 text-green-300; }
+    .badge-yellow { @apply badge bg-brand-500/20 text-brand-300; }
+    .badge-red    { @apply badge bg-red-500/20 text-red-300; }
+    .badge-gray   { @apply badge bg-[#1a4445] text-text-secondary; }
+
+    .table-container {
+        @apply overflow-x-auto rounded-xl border border-[#1a4445];
+    }
+
+    .data-table {
+        @apply w-full text-sm;
+    }
+
+    .data-table th {
+        @apply bg-[#0a2e2f] px-4 py-3 text-left text-xs font-semibold
+               text-text-secondary uppercase tracking-wide;
+    }
+
+    .data-table td {
+        @apply px-4 py-3 border-t border-[#1a4445] text-text-primary;
+    }
+
+    .data-table tr:hover td {
+        @apply bg-[#0f3536];
+    }
+
+    .page-header {
+        @apply flex items-center justify-between mb-6;
+    }
+
+    .page-title {
+        @apply text-2xl font-bold text-text-primary;
+    }
+
+    .sidebar-link {
+        @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium
+               text-text-secondary hover:bg-[#0f3536] hover:text-accent-300 transition-colors;
+    }
+
+    .sidebar-link.active {
+        @apply bg-accent-500/20 text-accent-300;
+    }
+}
+
+/* ── Typography / Prose ────────────────────────────────────────────────────── */
+.prose {
+    @apply text-text-primary;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-text-primary;
+}
+
+.prose a {
+    @apply text-accent-400 hover:text-accent-300;
+}
+
+.prose code {
+    @apply text-text-primary bg-[#0a2e2f] px-1.5 py-0.5 rounded;
+}
