@@ -1,12 +1,12 @@
 import { Head, useForm, usePage } from '@inertiajs/react';
 import AuthLayout from '@/Layouts/AuthLayout';
 import Button from '@/Components/UI/Button';
+import LogoutButton from '@/Components/UI/LogoutButton';
 import { Mail } from 'lucide-react';
 
 export default function VerifyEmail({ status }) {
     const { auth } = usePage().props;
     const { post: resend, processing: resending } = useForm({});
-    const { post: logout } = useForm({});
 
     return (
         <AuthLayout>
@@ -32,9 +32,9 @@ export default function VerifyEmail({ status }) {
                 <Button onClick={() => resend(route('verification.send'))} loading={resending} className="w-full">
                     Resend Verification Email
                 </Button>
-                <Button variant="ghost" onClick={() => logout(route('logout'))} className="w-full">
+                <LogoutButton className="w-full btn ghost">
                     Log Out
-                </Button>
+                </LogoutButton>
             </div>
         </AuthLayout>
     );

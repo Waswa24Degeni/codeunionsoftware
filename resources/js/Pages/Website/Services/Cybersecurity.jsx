@@ -6,13 +6,5 @@ export default function Cybersecurity() {
     const { siteSettings = {} } = usePage().props;
     const service = getServiceByKey(siteSettings, 'cybersecurity');
 
-    return (
-        <ServiceDetailPage
-            title={service.title}
-            description={service.description}
-            points={service.features}
-            noteLabel={service.noteLabel}
-            noteText={service.noteText}
-        />
-    );
+    return <ServiceDetailPage service={service} />;
 }

@@ -1,0 +1,1 @@
+import{e as n,j as p,b as g}from"./app-B58nJbiU.js";function b({children:o,className:u,onClick:t,...e}){const{signOut:s}=n(),r=async a=>{a.preventDefault(),t==null||t();try{await s()}catch{}g.post(route("logout"))};return p.jsx("button",{type:"button",onClick:r,className:u,...e,children:o})}export{b as L};

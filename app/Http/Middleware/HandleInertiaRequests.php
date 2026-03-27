@@ -46,6 +46,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'siteSettings' => fn () => SiteSetting::publicSettings(),
             'socialLinks'  => fn () => SiteSetting::socials(),
+            'clerkPubKey'  => config('clerk.publishable_key'),
             'notificationCenter' => fn () => $this->notificationCenterPayload($user),
         ]);
     }

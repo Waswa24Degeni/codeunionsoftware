@@ -6,13 +6,5 @@ export default function WebDevelopment() {
     const { siteSettings = {} } = usePage().props;
     const service = getServiceByKey(siteSettings, 'web-development');
 
-    return (
-        <ServiceDetailPage
-            title={service.title}
-            description={service.description}
-            points={service.features}
-            noteLabel={service.noteLabel}
-            noteText={service.noteText}
-        />
-    );
+    return <ServiceDetailPage service={service} />;
 }

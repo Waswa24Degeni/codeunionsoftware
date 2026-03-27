@@ -121,21 +121,22 @@ export default function Footer() {
                                         rel="noopener noreferrer"
                                         aria-label={label}
                                         title={label}
-                                        className="group relative flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-125 hover:-translate-y-0.5 focus-visible:outline-none"
+                                        className="group/social relative flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-lg focus-visible:outline-none"
                                         style={{
-                                            color,
-                                            border: `1px solid ${color}88`,
-                                            backgroundColor: `${color}14`,
-                                            boxShadow: `0 0 0 1px ${color}30, 0 0 18px ${color}26`,
+                                            '--brand': color,
+                                            color: color,
+                                            borderColor: `${color}40`,
+                                            backgroundColor: `${color}0A`,
                                         }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = color; e.currentTarget.style.borderColor = color; e.currentTarget.style.color = '#fff'; e.currentTarget.style.boxShadow = `0 8px 24px ${color}55`; }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = `${color}0A`; e.currentTarget.style.borderColor = `${color}40`; e.currentTarget.style.color = color; e.currentTarget.style.boxShadow = 'none'; }}
                                     >
                                         <span
-                                            className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide opacity-0 transition-all duration-200 group-hover:-translate-y-1 group-hover:opacity-100 group-focus-visible:-translate-y-1 group-focus-visible:opacity-100"
+                                            className="pointer-events-none absolute -top-10 left-1/2 z-10 -translate-x-1/2 rounded-md px-2.5 py-1 text-[10px] font-semibold tracking-wide opacity-0 transition-all duration-200 group-hover/social:-translate-y-1 group-hover/social:opacity-100"
                                             style={{
-                                                color,
-                                                border: `1px solid ${color}88`,
-                                                backgroundColor: '#021B1C',
-                                                boxShadow: `0 0 20px ${color}33`,
+                                                color: '#fff',
+                                                backgroundColor: color,
+                                                boxShadow: `0 4px 12px ${color}44`,
                                             }}
                                         >
                                             {label}

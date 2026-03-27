@@ -1,7 +1,8 @@
-import { Link, usePage } from '@inertiajs/react';
+import { usePage } from '@inertiajs/react';
 import { Menu, LogOut, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import NotificationBell from '@/Components/Notifications/NotificationBell';
 import { normalizeImageUrl } from '@/lib/normalizeImageUrl';
+import LogoutButton from '@/Components/UI/LogoutButton';
 
 export default function AdminHeader({ title, onMenuClick, onToggleSidebar, isSidebarCollapsed }) {
     const { auth } = usePage().props;
@@ -55,14 +56,11 @@ export default function AdminHeader({ title, onMenuClick, onToggleSidebar, isSid
                     </div>
                 </div>
 
-                <Link
-                    href={route('logout')}
-                    method="post"
-                    as="button"
+                <LogoutButton
                     className="p-2 rounded-lg text-text-secondary hover:text-brand-500 hover:bg-brand-500/10"
                 >
                     <LogOut size={18} />
-                </Link>
+                </LogoutButton>
             </div>
         </header>
     );

@@ -29,6 +29,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/services/database-management',         'serviceDatabaseManagement')->name('services.database-management');
     Route::get('/services/custom-software-development', 'serviceCustomSoftware')->name('services.custom-software');
     Route::get('/services/ui-ux-graphic-design',        'serviceUiUxGraphicDesign')->name('services.ui-ux-graphic-design');
+    Route::get('/services/networking',                   'serviceNetworking')->name('services.networking');
+    Route::get('/services/it-support',                   'serviceItSupport')->name('services.it-support');
     Route::get('/contact',   'contact')->name('contact');
     Route::get('/privacy-policy', 'privacyPolicy')->name('privacy-policy');
     Route::get('/terms-of-service', 'termsOfService')->name('terms-of-service');

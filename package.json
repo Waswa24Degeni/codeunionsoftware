@@ -6,6 +6,7 @@
         "build": "vite build"
     },
     "dependencies": {
+        "@clerk/clerk-react": "^5.61.4",
         "@headlessui/react": "^2.2",
         "@heroicons/react": "^2.2",
         "@inertiajs/react": "^2.0",

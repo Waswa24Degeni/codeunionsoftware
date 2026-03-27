@@ -57,22 +57,23 @@ function HeroSocialLinks({ socialLinks = {} }) {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 hover:scale-125"
+                    className="group/social relative inline-flex h-9 w-9 items-center justify-center rounded-xl border transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-lg"
                     style={{
                         color,
-                        border: `1px solid ${color}8A`,
-                        backgroundColor: `${color}1A`,
-                        boxShadow: `0 0 0 1px ${color}33, 0 0 10px ${color}26`,
+                        borderColor: `${color}40`,
+                        backgroundColor: `${color}0A`,
                     }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = color; e.currentTarget.style.borderColor = color; e.currentTarget.style.color = '#fff'; e.currentTarget.style.boxShadow = `0 6px 20px ${color}55`; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = `${color}0A`; e.currentTarget.style.borderColor = `${color}40`; e.currentTarget.style.color = color; e.currentTarget.style.boxShadow = 'none'; }}
                     aria-label={label}
                 >
-                    <Icon size={14} />
+                    <Icon size={15} />
                     <span
-                        className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10px] font-semibold opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                        className="pointer-events-none absolute -top-9 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md px-2.5 py-1 text-[10px] font-semibold opacity-0 transition-all duration-200 group-hover/social:-translate-y-0.5 group-hover/social:opacity-100"
                         style={{
-                            color,
-                            border: `1px solid ${color}88`,
-                            backgroundColor: '#021B1C',
+                            color: '#fff',
+                            backgroundColor: color,
+                            boxShadow: `0 4px 12px ${color}44`,
                         }}
                     >
                         {label}

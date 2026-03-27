@@ -40,3 +40,11 @@ Route::prefix('v1')->group(function () {
     });
 
 });
+
+/*
+|--------------------------------------------------------------------------
+| Clerk Webhooks  (api/clerk/webhook)
+|--------------------------------------------------------------------------
+*/
+Route::post('/clerk/webhook', [\App\Controllers\Accounts\ClerkController::class, 'webhook'])
+    ->name('clerk.webhook');

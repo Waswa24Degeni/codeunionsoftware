@@ -71,6 +71,16 @@ class HomeController extends Controller
         return Inertia::render('Website/Services/UiUxGraphicDesign');
     }
 
+    public function serviceNetworking(): Response
+    {
+        return Inertia::render('Website/Services/Networking');
+    }
+
+    public function serviceItSupport(): Response
+    {
+        return Inertia::render('Website/Services/ItSupport');
+    }
+
     public function contact(): Response
     {
         return Inertia::render('Website/Contact');

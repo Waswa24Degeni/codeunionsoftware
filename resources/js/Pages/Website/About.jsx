@@ -66,23 +66,23 @@ function TeamSocialLinks({ links = {} }) {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 hover:scale-125 hover:-translate-y-0.5"
+                        className="group/social relative inline-flex items-center justify-center w-9 h-9 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-lg"
                         style={{
                             color: brandColor,
-                            border: `1px solid ${brandColor}88`,
-                            backgroundColor: `${brandColor}14`,
-                            boxShadow: `0 0 0 1px ${brandColor}30, 0 0 10px ${brandColor}22`,
+                            borderColor: `${brandColor}40`,
+                            backgroundColor: `${brandColor}0A`,
                         }}
+                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = brandColor; e.currentTarget.style.borderColor = brandColor; e.currentTarget.style.color = '#fff'; e.currentTarget.style.boxShadow = `0 8px 24px ${brandColor}55`; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = `${brandColor}0A`; e.currentTarget.style.borderColor = `${brandColor}40`; e.currentTarget.style.color = brandColor; e.currentTarget.style.boxShadow = 'none'; }}
                         aria-label={config.label}
                     >
                         {iconNode}
                         <span
-                            className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10px] font-semibold opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                            className="pointer-events-none absolute -top-9 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md px-2.5 py-1 text-[10px] font-semibold opacity-0 transition-all duration-200 group-hover/social:-translate-y-0.5 group-hover/social:opacity-100"
                             style={{
-                                color: brandColor,
-                                border: `1px solid ${brandColor}88`,
-                                backgroundColor: '#021B1C',
-                                boxShadow: `0 0 12px ${brandColor}33`,
+                                color: '#fff',
+                                backgroundColor: brandColor,
+                                boxShadow: `0 4px 12px ${brandColor}44`,
                             }}
                         >
                             {config.label}

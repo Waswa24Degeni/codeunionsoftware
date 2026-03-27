@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Controllers\Accounts\AuthController;
 use App\Controllers\Accounts\RegisterController;
 use App\Controllers\Accounts\PasswordController;
+use App\Controllers\Accounts\ClerkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::middleware('guest')->group(function () {
     Route::post('/reset-password', [PasswordController::class, 'resetPassword'])->name('password.update');
 
 });
+
+// ── Clerk integration ─────────────────────────────────────────────────────
+Route::get('/clerk/callback', [ClerkController::class, 'callback'])->name('clerk.callback');
+Route::post('/clerk/sync-session', [ClerkController::class, 'syncSession'])->name('clerk.sync');
 
 Route::middleware('auth')->group(function () {
 

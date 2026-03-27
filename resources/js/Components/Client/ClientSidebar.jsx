@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { LayoutDashboard, MessageSquare, FileCheck, User, Settings, LogOut } from 'lucide-react';
 import clsx from 'clsx';
+import LogoutButton from '@/Components/UI/LogoutButton';
 
 const links = [
     { label: 'Dashboard',    icon: LayoutDashboard, href: 'client.dashboard' },
@@ -33,10 +34,7 @@ export default function ClientSidebar({ collapsed = false, open = false, onClose
             </nav>
 
             <div className="border-t border-[#1a4445] p-3">
-                <Link
-                    href={route('logout')}
-                    method="post"
-                    as="button"
+                <LogoutButton
                     onClick={onClose}
                     title={isCompact ? 'Log Out' : undefined}
                     className={clsx(
@@ -46,7 +44,7 @@ export default function ClientSidebar({ collapsed = false, open = false, onClose
                 >
                     <LogOut size={18} />
                     {!isCompact && <span>Log Out</span>}
-                </Link>
+                </LogoutButton>
             </div>
         </>
     );
